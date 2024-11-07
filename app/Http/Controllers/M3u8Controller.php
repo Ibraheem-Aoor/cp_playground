@@ -66,7 +66,7 @@ class M3u8Controller extends Controller
 
     public function getPlayListUrl()
     {
-        return 'http://127.0.0.1:83/storage/playlists/playlist.m3u8';
+        return  Storage::disk('public')->url('playlists/playlist.m3u8');
     }
     public function showStreamedSong()
     {
