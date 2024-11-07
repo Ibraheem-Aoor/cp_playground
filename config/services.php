@@ -31,4 +31,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    /**
+     * path on linux differs from windows os
+     */
+    'ffmpeg' => [
+        'path' => env('FFMPEG_PATH', '/usr/bin/ffmpeg'),
+    ],
+
 ];

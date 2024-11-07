@@ -53,7 +53,7 @@ class M3u8Controller extends Controller
         // Immediately stream the updated playlist
         $playlistUrl = $this->getPlayListUrl();  // Get the URL of the updated playlist
         $outputFile = storage_path('app/public/new.mp3'); // Generate a new output file name
-        $ffmpegPath = 'C:/ffmpeg/bin/ffmpeg.exe';  // Path to FFMpeg
+        $ffmpegPath = config('services.ffmpeg.path');  // Path to FFMpeg
 
         // Build the FFMpeg command with progress output
         $command = "$ffmpegPath -i {$playlistUrl} -c copy {$outputFile}   -progress pipe:1";
@@ -78,7 +78,7 @@ class M3u8Controller extends Controller
     {
         $playlistUrl = $this->getPlayListUrl(); // Assuming this is your M3U8 file URL
         $outputFile = storage_path('app/public/test.mp3'); // Output file name
-        $ffmpegPath = 'C:/ffmpeg/bin/ffmpeg.exe';  // Path to FFMpeg
+        $ffmpegPath = config('services.ffmpeg.path');  // Path to FFMpeg
 
         // Build the FFMpeg command with progress output
         $command = "$ffmpegPath -i {$playlistUrl} -c copy {$outputFile}  -progress pipe:1";
